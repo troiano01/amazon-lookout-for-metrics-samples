@@ -1,0 +1,22 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/l4m-athena-connector.ts",
+
+  "context": {
+    "dev": {
+      "resultsBucketName": "l4m-sample-athena-results",
+      "dataBucketName": "l4m-sample-athena-data",
+      "workGroupName": "L4MAthenaWorkgroup",
+      "glueDatabaseName": "athena_db",
+      "glueTableName": "l4m_athena_table",
+      "s3BucketPrefix": "PT5M",
+      "detectorFrequency": "300",
+      "historicalDataPoints": "5",
+      "futureDataPoints": "5",
+      "lambdaRelativePath": "../function/lambda.zip",
+      "lambdaMemorySize": 256,
+      "lambdaMaxDuration": 180,
+      "eventRuleFrequency": 5,
+      "eventEnabled": true
+    }
+  }
+}

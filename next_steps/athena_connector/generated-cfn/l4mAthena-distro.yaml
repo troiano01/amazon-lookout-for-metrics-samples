@@ -1,0 +1,261 @@
+Resources:
+  resultsBucketStackNestedStackresultsBucketStackNestedStackResource03B9EC60:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL:
+        Fn::Join:
+          - ""
+          - - https://s3.
+            - Ref: AWS::Region
+            - "."
+            - Ref: AWS::URLSuffix
+            - /
+            - Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+            - /61a084f76be52d3d9de678af78b028998bd3a3423253fd465803860489ba88f1.json
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: l4mAthenaStack/resultsBucketStack.NestedStack/resultsBucketStack.NestedStackResource
+      aws:asset:path: l4mAthenaStackresultsBucketStack372656CB.nested.template.json
+      aws:asset:property: TemplateURL
+  dataBucketStackNestedStackdataBucketStackNestedStackResource9FC29F1C:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL:
+        Fn::Join:
+          - ""
+          - - https://s3.
+            - Ref: AWS::Region
+            - "."
+            - Ref: AWS::URLSuffix
+            - /
+            - Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+            - /691ec676253506199bc6015654e84bcb8aaa565590c9805743827e20a2bb9533.json
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: l4mAthenaStack/dataBucketStack.NestedStack/dataBucketStack.NestedStackResource
+      aws:asset:path: l4mAthenaStackdataBucketStack7EA9FEF9.nested.template.json
+      aws:asset:property: TemplateURL
+  workGroupStackNestedStackworkGroupStackNestedStackResource9DE8456C:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL:
+        Fn::Join:
+          - ""
+          - - https://s3.
+            - Ref: AWS::Region
+            - "."
+            - Ref: AWS::URLSuffix
+            - /
+            - Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+            - /2667ab8f1b24028c24c1d59cb898a19bff7715685c4c0e4628e7daf1306ea967.json
+      Parameters:
+        referencetol4mAthenaStackresultsBucketStackNestedStackresultsBucketStackNestedStackResourceED252133Outputsl4mAthenaStackresultsBucketStacks3BucketB8D27C9DRef:
+          Fn::GetAtt:
+            - resultsBucketStackNestedStackresultsBucketStackNestedStackResource03B9EC60
+            - Outputs.l4mAthenaStackresultsBucketStacks3BucketB8D27C9DRef
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: l4mAthenaStack/workGroupStack.NestedStack/workGroupStack.NestedStackResource
+      aws:asset:path: l4mAthenaStackworkGroupStack6F9BC942.nested.template.json
+      aws:asset:property: TemplateURL
+  glueStackNestedStackglueStackNestedStackResourceD96EE38C:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL:
+        Fn::Join:
+          - ""
+          - - https://s3.
+            - Ref: AWS::Region
+            - "."
+            - Ref: AWS::URLSuffix
+            - /
+            - Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+            - /a7770d2f414c105f9c7573679bee4f4370133bc2112a503735837abac0c8ac38.json
+      Parameters:
+        referencetol4mAthenaStackdataBucketStackNestedStackdataBucketStackNestedStackResourceF984C29EOutputsl4mAthenaStackdataBucketStacks3Bucket02C1BD1ARef:
+          Fn::GetAtt:
+            - dataBucketStackNestedStackdataBucketStackNestedStackResource9FC29F1C
+            - Outputs.l4mAthenaStackdataBucketStacks3Bucket02C1BD1ARef
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: l4mAthenaStack/glueStack.NestedStack/glueStack.NestedStackResource
+      aws:asset:path: l4mAthenaStackglueStack893E57A4.nested.template.json
+      aws:asset:property: TemplateURL
+  l4m2AthenaDataGenLambdaStackNestedStackl4m2AthenaDataGenLambdaStackNestedStackResource2D39BAD9:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL:
+        Fn::Join:
+          - ""
+          - - https://s3.
+            - Ref: AWS::Region
+            - "."
+            - Ref: AWS::URLSuffix
+            - /
+            - Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+            - /b97efea781814bde7ce1bcade9721acd509f4015e9e52f7e080268a96fbbce83.json
+      Parameters:
+        referencetol4mAthenaStackworkGroupStackNestedStackworkGroupStackNestedStackResource3B5E164EOutputsl4mAthenaStackworkGroupStackworkgroupKey8C5F256AArn:
+          Fn::GetAtt:
+            - workGroupStackNestedStackworkGroupStackNestedStackResource9DE8456C
+            - Outputs.l4mAthenaStackworkGroupStackworkgroupKey8C5F256AArn
+        referencetol4mAthenaStackresultsBucketStackNestedStackresultsBucketStackNestedStackResourceED252133Outputsl4mAthenaStackresultsBucketStacks3BucketB8D27C9DArn:
+          Fn::GetAtt:
+            - resultsBucketStackNestedStackresultsBucketStackNestedStackResource03B9EC60
+            - Outputs.l4mAthenaStackresultsBucketStacks3BucketB8D27C9DArn
+        referencetol4mAthenaStackdataBucketStackNestedStackdataBucketStackNestedStackResourceF984C29EOutputsl4mAthenaStackdataBucketStacks3Bucket02C1BD1AArn:
+          Fn::GetAtt:
+            - dataBucketStackNestedStackdataBucketStackNestedStackResource9FC29F1C
+            - Outputs.l4mAthenaStackdataBucketStacks3Bucket02C1BD1AArn
+        referencetol4mAthenaStackworkGroupStackNestedStackworkGroupStackNestedStackResource3B5E164EOutputsl4mAthenaStackworkGroupStack6F9BC942AWSRegion:
+          Fn::GetAtt:
+            - workGroupStackNestedStackworkGroupStackNestedStackResource9DE8456C
+            - Outputs.l4mAthenaStackworkGroupStack6F9BC942AWSRegion
+        referencetol4mAthenaStackworkGroupStackNestedStackworkGroupStackNestedStackResource3B5E164EOutputsl4mAthenaStackworkGroupStack6F9BC942AWSAccountId:
+          Fn::GetAtt:
+            - workGroupStackNestedStackworkGroupStackNestedStackResource9DE8456C
+            - Outputs.l4mAthenaStackworkGroupStack6F9BC942AWSAccountId
+        referencetol4mAthenaStackglueStackNestedStackglueStackNestedStackResource80C61DB6Outputsl4mAthenaStackglueStack893E57A4AWSRegion:
+          Fn::GetAtt:
+            - glueStackNestedStackglueStackNestedStackResourceD96EE38C
+            - Outputs.l4mAthenaStackglueStack893E57A4AWSRegion
+        referencetol4mAthenaStackglueStackNestedStackglueStackNestedStackResource80C61DB6Outputsl4mAthenaStackglueStack893E57A4AWSAccountId:
+          Fn::GetAtt:
+            - glueStackNestedStackglueStackNestedStackResourceD96EE38C
+            - Outputs.l4mAthenaStackglueStack893E57A4AWSAccountId
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: l4mAthenaStack/l4m2AthenaDataGenLambdaStack.NestedStack/l4m2AthenaDataGenLambdaStack.NestedStackResource
+      aws:asset:path: l4mAthenaStackl4m2AthenaDataGenLambdaStackF09953C5.nested.template.json
+      aws:asset:property: TemplateURL
+  l4m2AthenaSchedLambdaEventStackNestedStackl4m2AthenaSchedLambdaEventStackNestedStackResourceE9D7F1F9:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL:
+        Fn::Join:
+          - ""
+          - - https://s3.
+            - Ref: AWS::Region
+            - "."
+            - Ref: AWS::URLSuffix
+            - /
+            - Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+            - /08cbb40b536382795b245cc692492d0ffadc1a18fa85fca980addcf079e5b07b.json
+      Parameters:
+        referencetol4mAthenaStackl4m2AthenaDataGenLambdaStackNestedStackl4m2AthenaDataGenLambdaStackNestedStackResourceDB7CDE78Outputsl4mAthenaStackl4m2AthenaDataGenLambdaStacklambdafunction033EB11DArn:
+          Fn::GetAtt:
+            - l4m2AthenaDataGenLambdaStackNestedStackl4m2AthenaDataGenLambdaStackNestedStackResource2D39BAD9
+            - Outputs.l4mAthenaStackl4m2AthenaDataGenLambdaStacklambdafunction033EB11DArn
+        referencetol4mAthenaStackdataBucketStackNestedStackdataBucketStackNestedStackResourceF984C29EOutputsl4mAthenaStackdataBucketStacks3Bucket02C1BD1ARef:
+          Fn::GetAtt:
+            - dataBucketStackNestedStackdataBucketStackNestedStackResource9FC29F1C
+            - Outputs.l4mAthenaStackdataBucketStacks3Bucket02C1BD1ARef
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: l4mAthenaStack/l4m2AthenaSchedLambdaEventStack.NestedStack/l4m2AthenaSchedLambdaEventStack.NestedStackResource
+      aws:asset:path: l4mAthenaStackl4m2AthenaSchedLambdaEventStack0B013A55.nested.template.json
+      aws:asset:property: TemplateURL
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Analytics: v2:deflate64:H4sIAAAAAAAA/zPSMzLVM1BMLC/WTU7J1s3JTNKrDi5JTM7WcU7LgzOCUovzS4uSU0Fs5/y8lMySzPy8Wp28/JRUvaxi/TJDMz1DkDFZxZmZukWleSWZual6QRAaAFFZ3+FiAAAA
+    Metadata:
+      aws:cdk:path: l4mAthenaStack/CDKMetadata/Default
+    Condition: CDKMetadataAvailable
+Conditions:
+  CDKMetadataAvailable:
+    Fn::Or:
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - af-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ca-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-northwest-1
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-3
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - me-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - sa-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-2
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-2
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - "1"
+                  - "2"
+                  - "3"
+                  - "4"
+                  - "5"
+                - Ref: BootstrapVersion
+        AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.
+

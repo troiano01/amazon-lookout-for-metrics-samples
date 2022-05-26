@@ -1,0 +1,27 @@
+{
+  "name": "l4m-athena-connector",
+  "version": "0.1.0",
+  "bin": {
+    "l4m_athena_connector": "bin/l4m-athena-connector.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0"
+  },
+  "devDependencies": {
+    "aws-cdk-lib": "^2.25.0",
+    "constructs": "^10.0.0",
+    "ts-node": "^10.8.0",
+    "typescript": "~3.9.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0"
+  }
+}
