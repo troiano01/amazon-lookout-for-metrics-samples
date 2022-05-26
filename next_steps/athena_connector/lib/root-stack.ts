@@ -6,7 +6,6 @@ import { Construct } from 'constructs';
 import { GlueStack } from '../lib/glue-table';
 import { S3BucketStack } from '../lib/s3-bucket';
 import { WorkGroupStack } from '../lib/athena-workgroup';
-import { AccessRoleStack } from '../lib/access-role';
 import { L4m2AthenaDataGenLambdaStack } from '../lib/data-gen-lambda';
 import { L4m2AthenaSchedLambdaEventStack } from '../lib/sched-lambda-event';
 
@@ -15,7 +14,6 @@ export class L4mAthenaStack extends Stack {
     super(scope, id, props);
 
     const env = this.node.tryGetContext('dev');
-    const {accountId} = new ScopedAws(this);
 
     const resultsBucketStack = new S3BucketStack(this, 'resultsBucketStack', {
       bucketName: env.resultsBucketName
