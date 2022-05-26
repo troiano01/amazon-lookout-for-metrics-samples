@@ -19,7 +19,7 @@ Note the Amazon Lookout for Metrics Athena Connector is new and does not yet hav
 ---
 
 ## Prerequisites
-The instructions below assume familiarity with AWS CDK. If you need to start with setting the AWS CDK up, start with [the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) and [the AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) documentation. The instructions reference using named profiles. If you use more than one AWS environment, it is recommended to [setup named profiles on your system](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
+The instructions below assume familiarity with AWS CDK. If you need to start with setting the AWS CDK up, start with [the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html){:target='_blank'} and [the AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html){:target='_blank'} documentation. The instructions reference using named profiles. If you use more than one AWS environment, it is recommended to [setup named profiles on your system](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html){:target='_blank'}.
 
 ## Clone the repository
 
